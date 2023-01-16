@@ -1,3 +1,31 @@
-h1 {
-    color: blue;
+html, body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #b0c4de;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+body > * {
+    border: 1px solid white;
+}
+
+#form, #weatherOutput {
+    width: 50%;
+}
+
+#form {
+    flex-grow: 1;
+}
+
+#weatherOutput {
+    flex-grow: 3;
+}
+
+#footer {
+    width: 100%;
 }
