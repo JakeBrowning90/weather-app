@@ -12,20 +12,23 @@
         <div>What's the Weather?</div>
         <form id="form" action="">
             <input type="text" name="city" id='cityField' placeholder="'New York', 'Paris, France', 'Auckland, NZ'" required>
-            <button type="submit" id="submit">Submit</button>
+            <button type="submit" id="submit">Search</button>
         </form>
         <div id="timeStamp">Error placeholder</div>
     </div>
     <div id="top2">
         <div id='weatherOutput'>
             <div id ='locationDiv'></div>
-            <div id ='timeDiv'></div>
+            <div id ='localTimeDiv'></div>
             <div id ='iconDiv'>
                 <img id = "weatherIcon" src="" alt="Current weather icon">
             </div>
            
             <div id ='conditionDiv'></div>
-            <div id ='windDiv'></div>
+            <div id ='windDiv'>
+                <div id ='metricWindDiv'></div>
+                <div id ='imperialWindDiv' class='hidden'></div>
+            </div>
             <div id ='humidityDiv'></div>
             <div id ='feelsLikeDiv'>
                 <div id="cTempFeelDiv"></div>
