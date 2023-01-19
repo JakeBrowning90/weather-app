@@ -1,3 +1,8 @@
+:root {
+    --dark: rgba(0, 0, 0, 0.5);
+    --light: rgba(0, 0, 0, 0.4);
+}
+
 html, body {
     color: yellow;
     background-color: #b0c4de;
@@ -20,7 +25,7 @@ body > * {
     flex-direction: column;
     justify-content: center;
     margin: 5% 0;
-    background-color: rgba(128, 128, 128, 0.645);
+    background-color: var(--dark);
 }
 
 #form{
@@ -33,7 +38,7 @@ body > * {
 }
 
 #weatherOutput {
-    background-color: rgba(128, 128, 128, 0.645);
+    background-color: var(--dark);;
     height: 75%;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -49,7 +54,7 @@ body > * {
     grid-row: 1 / 2;
 }
 
-#timeDiv {
+#localTimeDiv {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
 }
@@ -90,7 +95,7 @@ body > * {
 }
 
 #footer {
-    background-color: rgba(128, 128, 128, 0.645);
+    background-color: var(--dark);
 }
 
 .hidden {
