@@ -8,14 +8,38 @@
     <title>Weather App</title>
 </head>
 <body>
-    <div id='form'>form
-        <form action="">
-            <input type="text">
-            <input type="text">
-            <button>Submit</button>
+    <div id="top">
+        <div>What's the Weather?</div>
+        <form id="form" action="">
+            <input type="text" name="city" id='cityField' placeholder="'New York', 'Paris, France', 'Auckland, NZ'" required>
+            <button type="submit" id="submit">Submit</button>
         </form>
+        <div id="timeStamp">Error placeholder</div>
     </div>
-    <div id='weatherOutput'></div>
-    <div id='footer'>footer, Created by Jake Browning for The Odin Project, 2023</div>
+    <div id="top2">
+        <div id='weatherOutput'>
+            <div id ='locationDiv'></div>
+            <div id ='timeDiv'></div>
+            <div id ='iconDiv'>
+                <img id = "weatherIcon" src="" alt="Current weather icon">
+            </div>
+           
+            <div id ='conditionDiv'></div>
+            <div id ='windDiv'></div>
+            <div id ='humidityDiv'></div>
+            <div id ='feelsLikeDiv'>
+                <div id="cTempFeelDiv"></div>
+                <div id="fTempFeelDiv" class='hidden'></div>
+            </div>
+            <div id ='tempDiv'>
+                <div id="cTempDiv"></div>
+                <div id="fTempDiv" class='hidden'></div>
+            </div>
+            <div id ='toggleDiv'>
+                <button id="toggleButton">Toggle </button>
+            </div>
+        </div>
+    </div>
+    <div id='footer'>Created by Jake Browning for The Odin Project, 2023</div>
 </body>
 </html>

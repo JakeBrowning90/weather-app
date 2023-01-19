@@ -1,31 +1,98 @@
 html, body {
+    color: yellow;
+    background-color: #b0c4de;
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
-    background-color: #b0c4de;
     align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    border: 1px solid black;
+    justify-content: stretch;
 }
 
 body > * {
     border: 1px solid white;
+    width: 500px;
 }
 
-#form, #weatherOutput {
-    width: 50%;
-}
-
-#form {
+#top {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5% 0;
+    background-color: rgba(128, 128, 128, 0.645);
+}
+
+#form{
+    display: flex;
+    justify-content: stretch;
+}
+
+#top2 {
+    flex-grow: 4;
 }
 
 #weatherOutput {
-    flex-grow: 3;
+    background-color: rgba(128, 128, 128, 0.645);
+    height: 75%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+}
+
+#weatherOutput > * {
+    border: 1px solid blue;
+}
+
+#locationDiv {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+#timeDiv {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+#iconDiv {
+    grid-column: 1 / 2;
+    grid-row: 2 / -3;
+}
+
+#conditionDiv {
+    grid-column: 2 / -1;
+    grid-row: 2 / 3;
+}
+
+#windDiv {
+    grid-column: 2 / -1;
+    grid-row: 3 / 4;
+}
+
+#humidityDiv {
+    grid-column: 2 / -1;
+    grid-row: 4 / 5;
+}
+
+#feelsLikeDiv {
+    grid-column: 2 / -1;
+    grid-row: 5 / 6;
+}
+
+#tempDiv {
+    grid-column: 1 / 2;
+    grid-row: -3 / -1;
+}
+
+#toggleDiv {
+    grid-column: -1 / -2;
+    grid-row: -1 / -2;
 }
 
 #footer {
-    width: 100%;
+    background-color: rgba(128, 128, 128, 0.645);
+}
+
+.hidden {
+    display: none;
 }
