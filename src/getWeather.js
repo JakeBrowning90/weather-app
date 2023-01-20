@@ -1,10 +1,9 @@
 import { getWindCardinal } from './getWindCardinal';
 
-async function getWeather() {
+async function getWeather(search) {
     const currentWeather = new Object();
-    const city = document.getElementById('cityField')
-    let location = city.value;
-    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=' + location + '&APPID=e8257bcdcd628305b554f62d782b0777', {mode: 'cors'});
+    // Fetch API with search term
+    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=' + search + '&APPID=e8257bcdcd628305b554f62d782b0777', {mode: 'cors'});
     const weatherData = await response.json();
 
     //Create new Object of selected response values
