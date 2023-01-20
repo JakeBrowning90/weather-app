@@ -32,7 +32,6 @@ async function getWeather(search) {
     currentWeather.fTempFeel = (((weatherData.main.feels_like - 273.15) * 9) / 5 + 32).toFixed(1);
 
     return currentWeather;
-    
 }
 
 export { getWeather };
