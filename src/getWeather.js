@@ -1,15 +1,17 @@
 import { getWindCardinal } from './getWindCardinal';
 
 async function getWeather() {
+    const currentWeather = new Object();
     const city = document.getElementById('cityField')
     let location = city.value;
     const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=' + location + '&APPID=e8257bcdcd628305b554f62d782b0777', {mode: 'cors'});
     const weatherData = await response.json();
-    // console.log(weatherData);
-    const currentWeather = new Object();
+
+    //Create new Object of selected response values
     currentWeather.icon = weatherData.weather[0].icon;
     currentWeather.location = weatherData.name;
     currentWeather.country = weatherData.sys.country;
+    currentWeather.condition = weatherData.weather[0].main;
 
     //get current time in UTC milliseconds
     let userTime = Date.now(); 
@@ -18,7 +20,6 @@ async function getWeather() {
     //Remove GMT from returned string
     currentWeather.localTime = (msTargetTime.toUTCString()).slice(0, -3);
 
-    currentWeather.condition = weatherData.weather[0].main;
     // Convert wind direction to compass direction
     currentWeather.windDirection = getWindCardinal(weatherData.wind.deg);
     // Convert wind speed to kph and mph
@@ -32,6 +33,7 @@ async function getWeather() {
     currentWeather.fTempFeel = (((weatherData.main.feels_like - 273.15) * 9) / 5 + 32).toFixed(1);
 
     return currentWeather;
+    
 }
 
 export { getWeather };
