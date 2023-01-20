@@ -1,6 +1,6 @@
 
 function swapTemp() {
-    // If imperial not showing, hide metric and show imperial. Else do the opposite
+    // If imperial is hidden, hide metric and show imperial. Else do the opposite
     if (fTempDiv.className == 'hidden') {
         cTempDiv.classList.add('hidden');
         cTempFeelDiv.classList.add('hidden');

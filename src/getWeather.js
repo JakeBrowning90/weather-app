@@ -5,11 +5,19 @@ async function getWeather() {
     let location = city.value;
     const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=' + location + '&APPID=e8257bcdcd628305b554f62d782b0777', {mode: 'cors'});
     const weatherData = await response.json();
-    console.log(weatherData);
+    // console.log(weatherData);
     const currentWeather = new Object();
     currentWeather.icon = weatherData.weather[0].icon;
     currentWeather.location = weatherData.name;
     currentWeather.country = weatherData.sys.country;
+
+    //get current time in UTC milliseconds
+    let userTime = Date.now(); 
+    //get add searched city's offset to UTC time
+    let msTargetTime = new Date(userTime + (weatherData.timezone * 1000));
+    //Remove GMT from returned string
+    currentWeather.localTime = (msTargetTime.toUTCString()).slice(0, -3);
+
     currentWeather.condition = weatherData.weather[0].main;
     // Convert wind direction to compass direction
     currentWeather.windDirection = getWindCardinal(weatherData.wind.deg);
