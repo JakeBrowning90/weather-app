@@ -18,7 +18,7 @@ function callNewCity(city) {
         timeStamp.textContent = "Last searched: " + new Date(); 
     });
     weatherData.catch(function(e) {
-        timeStamp.textContent = "Try again message"; 
+        timeStamp.textContent = 'No results found! Try searching for a city name ("New York") or a city name followed by a country name or 2-letter country code("Auckland, New Zealand" or "Auckland, NZ")'; 
     });
 }
 
