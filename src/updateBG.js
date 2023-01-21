@@ -1,4 +1,5 @@
 function updateBG(currentTime) {
+    document.body.removeAttribute('class');
     let currentHour = currentTime.getHours();
     if (currentHour >= 9 && currentHour <= 14) {
         //Set day image
