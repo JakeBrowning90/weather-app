@@ -23,8 +23,8 @@ function callNewCity(city) {
         updateBG(currentTime);
     });
     weatherData.catch(function(e) {
-        timeStamp.innerHTML = "No results found! <br />"; 
-        timeStamp.innerHTML += 'Try searching for a city name, or a city name followed by a comma and country / country code.'; 
+        timeStamp.innerHTML = "No results found!<br />"; 
+        timeStamp.innerHTML += 'Try searching for a city name, or a city name followed by a comma and country / country code. Include a state abbreviation for US cities.'; 
     });
 }
 
