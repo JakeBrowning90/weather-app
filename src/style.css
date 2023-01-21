@@ -1,11 +1,12 @@
 :root {
-    --dark: rgba(61, 61, 61, 0.5);
-    --light: rgba(0, 0, 0, 0.4);
+    --dark: rgba(53, 53, 53, 0.53);
 }
 
 html, body {
     font-family: Arial, sans-serif;
     color: white;
+    background-size: cover;
+    /* background-image: url(./img/white-cloud-blue-sky.jpg); */
     background-color: #b0c4de;
     height: 100vh;
     width: 100vw;
@@ -16,26 +17,49 @@ html, body {
 }
 
 body > * {
-    width: 500px;
+    width: 50%;
+    min-width: 500px;
+    box-sizing: border-box;
+}
+
+button {
+    border-radius: 10px;
+}
+
+#top, #weatherOutput, #footer {
+    background-color: var(--dark);
+    padding: 10px;
 }
 
 #top {
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: repeat (3 1fr);
+    justify-content: stretch;
+    align-items: stretch;
     margin: 5% 0;
-    background-color: var(--dark);
+    border-radius: 10px;
 }
 
-#form{
+#top > *, #weatherOutput > * , #footer{
     display: flex;
-    justify-content: stretch;
-    align-content: stretch;
+    align-items: center;
+    justify-content: center;
+}
+
+#title {
+    font-size: 2rem;
+}
+
+#form {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
 }
 
 #cityField{
-    width: 80%;
+    width: 100%;
+    border-radius: 10px;
 }
 
 #top2 {
@@ -43,68 +67,80 @@ body > * {
 }
 
 #weatherOutput {
-    background-color: var(--dark);;
+    border-radius: 10px;
     height: 75%;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        "locationDiv localTimeDiv"
+        "iconDiv conditionDiv"
+        "iconDiv windDiv"
+        "iconDiv humidityDiv"
+        "tempDiv feelsLikeDiv"
+        "tempDiv toggleDiv";
 }
 
 #weatherOutput > * {
-    border: 1px solid white;
-    padding: 10px;
-}
-
-#locationDiv {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-}
-
-#localTimeDiv {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-}
-
-#iconDiv {
-    grid-column: 1 / 2;
-    grid-row: 2 / -3;
+    border-bottom: 1px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+#locationDiv {
+    grid-area: locationDiv;
+    font-size: 2rem;
+}
+
+#localTimeDiv {
+    grid-area: localTimeDiv;
+}
+
+#iconDiv {
+    grid-area: iconDiv;
+}
+
+#weatherIcon {
+    height: 75%;
+}
+
 #conditionDiv {
-    grid-column: 2 / -1;
-    grid-row: 2 / 3;
+    grid-area: conditionDiv;
 }
 
 #windDiv {
-    grid-column: 2 / -1;
-    grid-row: 3 / 4;
+    grid-area: windDiv;
 }
 
 #humidityDiv {
-    grid-column: 2 / -1;
-    grid-row: 4 / 5;
+    grid-area: humidityDiv;
 }
 
 #feelsLikeDiv {
-    grid-column: 2 / -1;
-    grid-row: 5 / 6;
+    grid-area: feelsLikeDiv;
+    border-bottom: none;
 }
 
 #tempDiv {
-    grid-column: 1 / 2;
-    grid-row: -3 / -1;
+    grid-area: tempDiv;
+    border-bottom: none;
+    font-size: 2rem;
 }
 
 #toggleDiv {
-    grid-column: -1 / -2;
-    grid-row: -1 / -2;
+    grid-area: toggleDiv;
+    border-bottom: none;
+}
+
+#toggleButton {
+    height: 100%;
+    width: 100%;
+    font-size: large;
 }
 
 #footer {
-    background-color: var(--dark);
+    border-radius: 10px 10px 0px 0px;
 }
 
 .hidden {

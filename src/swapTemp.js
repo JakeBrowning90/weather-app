@@ -8,6 +8,7 @@ function swapTemp() {
         fTempDiv.classList.remove('hidden');
         fTempFeelDiv.classList.remove('hidden');
         imperialWindDiv.classList.remove('hidden');
+        toggleButton.textContent = "Show metric";
     } else if (cTempDiv.className == 'hidden') {
         fTempDiv.classList.add('hidden');
         fTempFeelDiv.classList.add('hidden');
@@ -15,6 +16,7 @@ function swapTemp() {
         cTempDiv.classList.remove('hidden');
         cTempFeelDiv.classList.remove('hidden');
         metricWindDiv.classList.remove('hidden');
+        toggleButton.textContent = "Show imperial";
     }
 }
 

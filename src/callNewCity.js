@@ -1,24 +1,30 @@
 // import { getWindCardinal } from './getWindCardinal';
 import { getWeather } from './getWeather.js'
+import { updateBG } from './updateBG'
 
 function callNewCity(city) {
     let weatherData = getWeather(city);
     weatherData.then(function() {
         weatherData.then((currentWeather) => weatherIcon.src = "http://openweathermap.org/img/wn/" + currentWeather.icon + "@2x.png");
         weatherData.then((currentWeather) => locationDiv.textContent = currentWeather.location + ", " + currentWeather.country);
-        weatherData.then((currentWeather) => localTimeDiv.textContent = currentWeather.localTime);
+        localTimeDiv.innerHTML = "Local time: <br />"; 
+        weatherData.then((currentWeather) => localTimeDiv.innerHTML += currentWeather.localTime);
         weatherData.then((currentWeather) => conditionDiv.textContent = currentWeather.condition);
-        weatherData.then((currentWeather) => metricWindDiv.textContent = currentWeather.windSpeedKPH + " km/h " + currentWeather.windDirection);
-        weatherData.then((currentWeather) => imperialWindDiv.textContent = currentWeather.windSpeedMPH + " mph " + currentWeather.windDirection);
-        weatherData.then((currentWeather) => humidityDiv.textContent = currentWeather.humidity + "%");
+        weatherData.then((currentWeather) => metricWindDiv.textContent = "Wind: " + currentWeather.windDirection + " " + currentWeather.windSpeedKPH + " km/h");
+        weatherData.then((currentWeather) => imperialWindDiv.textContent = "Wind: " + currentWeather.windDirection + " " + currentWeather.windSpeedMPH + " mph");
+        weatherData.then((currentWeather) => humidityDiv.textContent = "Humidity: " + currentWeather.humidity + "%");
         weatherData.then((currentWeather) => cTempDiv.textContent = currentWeather.cTemp + "° C");
         weatherData.then((currentWeather) => fTempDiv.textContent = currentWeather.fTemp + "° F");
         weatherData.then((currentWeather) => cTempFeelDiv.textContent = "Feels like " + currentWeather.cTempFeel + "° C");
         weatherData.then((currentWeather) => fTempFeelDiv.textContent = "Feels like " + currentWeather.fTempFeel + "° F");
-        timeStamp.textContent = "Last searched: " + new Date(); 
+        let currentTime = new Date()
+        timeStamp.textContent = "Last searched: " + currentTime; 
+        // Adjust background to user's local time
+        updateBG(currentTime);
     });
     weatherData.catch(function(e) {
-        timeStamp.textContent = 'No results found! Try searching for a city name ("New York") or a city name followed by a country name or 2-letter country code("Auckland, New Zealand" or "Auckland, NZ")'; 
+        timeStamp.innerHTML = "No results found! <br />"; 
+        timeStamp.innerHTML += 'Try searching for a city name, or a city name followed by a comma and country / country code.'; 
     });
 }
 
