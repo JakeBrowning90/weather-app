@@ -147,17 +147,17 @@ button {
 }
 
 .dayBG {
-    background-image: url(./img/white-cloud-blue-sky.jpg);
+    background-image: url(./img/day-min.jpg);
 }
 
 .duskBG {
-    background-image: url(./img/nature-colorful-landscape-dusk-cloud.jpg);
+    background-image: url(./img/dusk-min.jpg);
 }
 
 .nightBG {
-    background-image: url(./img/paul-volkmer-qVotvbsuM_c-unsplash.jpg);
+    background-image: url(./img/night-min.jpg);
 }
 
 .dawnBG {
-    background-image: url(./img/sky-background-sunrise.jpg);
+    background-image: url(./img/dawn-min.jpg);
 }
