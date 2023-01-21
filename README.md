@@ -1,5 +1,7 @@
 # weather-app
 
+API from https://openweathermap.org/
+
 Background photo credits:
 <a href="https://www.freepik.com/free-photo/nature-colorful-landscape-dusk-cloud_1088375.htm#query=sky&position=3&from_view=keyword">Image by mrsiraphol</a> on Freepik
 
