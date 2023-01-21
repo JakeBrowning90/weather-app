@@ -3,6 +3,7 @@ import './style.css';
 import { callNewCity } from './callNewCity'
 import { swapTemp } from './swapTemp'
 import { getExampleCity } from './getExampleCity'
+
 // import { functionTemplate } from './functionTemplate.js'
 
 const timeStamp = document.getElementById('timeStamp');

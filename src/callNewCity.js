@@ -20,7 +20,7 @@ function callNewCity(city) {
         let currentTime = new Date()
         timeStamp.textContent = "Last searched: " + currentTime; 
         // Adjust background to user's local time
-        updateBG(currentTime);
+        // updateBG(currentTime);
     });
     weatherData.catch(function(e) {
         timeStamp.innerHTML = "No results found! <br />"; 
