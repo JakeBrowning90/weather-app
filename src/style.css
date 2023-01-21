@@ -6,7 +6,6 @@ html, body {
     font-family: Arial, sans-serif;
     color: white;
     background-size: cover;
-    background-image: url(./img/white-cloud-blue-sky.jpg);
     background-color: #b0c4de;
     height: 100vh;
     width: 100vw;
@@ -145,4 +144,20 @@ button {
 
 .hidden {
     display: none;
+}
+
+.dayBG {
+    background-image: url(./img/white-cloud-blue-sky.jpg);
+}
+
+.duskBG {
+    background-image: url(./img/nature-colorful-landscape-dusk-cloud.jpg);
+}
+
+.nightBG {
+    background-image: url(./img/paul-volkmer-qVotvbsuM_c-unsplash.jpg);
+}
+
+.dawnBG {
+    background-image: url(./img/sky-background-sunrise.jpg);
 }
