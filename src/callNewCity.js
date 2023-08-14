@@ -1,4 +1,3 @@
-// import { getWindCardinal } from './getWindCardinal';
 import { getWeather } from './getWeather.js'
 import { updateBG } from './updateBG'
 

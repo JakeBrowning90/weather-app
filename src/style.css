@@ -21,11 +21,15 @@ body > * {
     box-sizing: border-box;
 }
 
+a, a:visited {
+    color: white;
+}
+
 button {
     border-radius: 10px;
 }
 
-#top, #weatherOutput, #footer {
+#top, #weatherOutput, footer {
     background-color: var(--dark);
     padding: 10px;
 }
@@ -40,7 +44,7 @@ button {
     border-radius: 10px;
 }
 
-#top > *, #weatherOutput > * , #footer{
+#top > *, #weatherOutput > *, footer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,7 +144,8 @@ button {
     font-size: large;
 }
 
-#footer {
+footer {
+    flex-direction: column;
     border-radius: 10px 10px 0px 0px;
 }
 
